@@ -1,7 +1,7 @@
 SilenceApp::Application.routes.draw do
-  root :to => 'lamb#index'
+  root :to => 'button#index'
 
-  resources :lamb
+  resources :lambs
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

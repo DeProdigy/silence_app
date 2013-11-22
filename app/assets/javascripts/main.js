@@ -3,25 +3,43 @@ $(document).ready(function(){
 });
 
 function addEventListeners() {
-  $("#create-lamb").click(function(){
+  $("#create-lamb").on("click", function() {
     createLamb();
   });
-};
+}
 
 function createLamb() {
   $.ajax({
-    url: '/lamb',
+    url: '/lambs',
     type: 'post'
   })
-  .done(function() {
-    console.log('created lamb')
-    displyLamb();
+  .done(function(data) {
+    console.log('created lamb');
+    displayLambs();
+  });
+}
+
+function displayLambs() {
+  $.ajax({
+    url: '/lambs',
+    type: 'get'
+  })
+  .done(function(data) {
+    console.log(data);
+    var $div = $("#lamb-holder");
+    $div.empty();
+    for (var i = 0; i < data.length; i++) {
+      var $li = $("<li class=lambs> Lamb " + i + " Silent? " + data[i].is_silent + "</li>");
+      $li.appendTo($div);
+    }
   });
 
-};
-
-function displyLamb() {
-  // $.ajax({
-  //   url: '/lamb',
-  //   type: 'get'
+  $("li").on("click", '.lambs', function() {
+    alert('yo');
+  });
 }
+
+function updateLamb() {
+  alert('yo');
+}
+
