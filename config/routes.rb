@@ -1,4 +1,6 @@
 SilenceApp::Application.routes.draw do
+  root :to => 'lamb#index'
+
   get "lamb/index"
 
   get "lamb/create"
