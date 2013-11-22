@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Lamb do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:lamb) { Lamb.new }
+
+  it "has a boolean is_silent set to true" do
+    expect(lamb.is_silent).to be true
+  end
+
+
+
 end
