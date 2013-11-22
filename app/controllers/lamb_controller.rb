@@ -3,5 +3,6 @@ class LambController < ApplicationController
   end
 
   def create
+    Lamb.create
   end
 end

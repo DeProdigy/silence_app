@@ -1,9 +1,7 @@
 SilenceApp::Application.routes.draw do
   root :to => 'lamb#index'
 
-  get "lamb/index"
-
-  get "lamb/create"
+  resources :lamb
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
