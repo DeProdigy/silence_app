@@ -9,7 +9,8 @@ gem 'pg'
 
 
 gem 'rspec-rails'
-gem 'guard-rspec'
+gem 'guard-rspec', :group => [:test, :development]
+
 gem 'jasmine'
 
 #Gemfile
